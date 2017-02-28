@@ -89,8 +89,7 @@ gulp.task('watch', function() {
     browserSync.init({
         proxy: 'localhost:8282'
     });
-    gulp.watch(config.scripts, ['rebuild']);
-    gulp.watch(config.html, ['rebuild']);
+    gulp.watch(config.watchTargets, ['rebuild']);
 });
 
 gulp.task('build', (config.isProd ?

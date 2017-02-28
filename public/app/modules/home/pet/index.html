@@ -1,11 +1,17 @@
-<div drupal-node="4">
+<drupal-node nid="4">
     <p>
-        {{ bhDrupal.node.entity.field_name[0].value }}
+        <drupal-field value="bhNode.node.entity.field_name[0].value" editing="bhNode.editing">
+            {{ bhNode.node.entity.field_name[0].value }}
+        </drupal-field>
     </p>
     <p>
-        {{ bhDrupal.node.entity.field_breedid[0].value }}
+        <drupal-field value="bhNode.node.entity.field_breedid[0].value" editing="bhNode.editing">
+            {{ bhNode.node.entity.field_breedid[0].value }}
+        </drupal-field>
     </p>
     <p>
-        {{ bhDrupal.node.entity.field_dob[0].value }}
+        <drupal-field value="bhNode.node.entity.field_dob[0].value" editing="bhNode.editing">
+            {{ bhNode.node.entity.field_dob[0].value }}
+        </drupal-field>
     </p>
-</div>
+</drupal-node>

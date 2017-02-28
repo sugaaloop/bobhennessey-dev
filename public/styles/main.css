@@ -30,6 +30,10 @@ p,a {
     font-size: 2rem;
 }
 
+drupal-node {
+    display: block;
+}
+
 .hover-border:hover {
     border: 2px dashed black;
 }

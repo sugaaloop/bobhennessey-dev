@@ -20,6 +20,11 @@ module.exports = function(argv) {
         html: [
             './**/*.html'
         ],
+        watchTargets: [
+            './**/*.js',
+            './**/*.html',
+            './**/*.css'
+        ],
         scriptsDestFile: 'scripts.min.js',
         // sassSrc: [
         //     'Content/SCSS/**/*.scss'
