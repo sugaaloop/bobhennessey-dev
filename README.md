@@ -1,5 +1,12 @@
 # bobhennessey . net
 
+## source
+### primary repo
+https://github.com/sugaaloop/bobhennessey-net
+
+### issues repo
+https://gitlab.com/sugaaloop/bobhennessey-net
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
 ## Development server
