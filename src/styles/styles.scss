@@ -6,5 +6,8 @@ body {
   background-color: $mint;
   color: $almost-black;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.5em;
+  font-size: 1.3em;
+  @include mq(mobile) {
+    font-size: 1em;
+  }
 }

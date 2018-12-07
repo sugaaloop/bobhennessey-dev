@@ -3,3 +3,11 @@ $mint: #57E399;
 $almost-black: #0B1C13;
 $evening-purp: #9957E3;
 $dark-sky-blue: #57A1E3;
+
+@mixin mq($break) {
+  @if $break == 'mobile' {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  }
+}
