@@ -1,26 +1,19 @@
-// server.js
+// app.js
+
+// google cloud app engine debugging
+require('@google-cloud/debug-agent').start();
 
 // modules =================================================
 var express        = require('express');
+var compression    = require('compression');
 var app            = express();
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
-var mongoose       = require('mongoose');
 
-// configuration ===========================================
-
-// config files
-var db = require('./config/db');
-
-// set our port
-var port = process.env.PORT || 8282;
-
-// connect to our mongoDB database
-// (uncomment after you enter in your own credentials in config/db.js)
-//mongoose.connect(db.url);
+const NodeCache = require( "node-cache" );
+const cache = new NodeCache();
 
 // get all data/stuff of the body (POST) parameters
-// parse application/json
 app.use(bodyParser.json());
 
 // parse application/vnd.api+json as json
@@ -33,27 +26,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('X-HTTP-Method-Override'));
 
 // set the static files location /public/img will be /img for users
-app.use(express.static(__dirname + '/public'));
+app.use(compression());
+app.use(express.static(__dirname + '/dist/bobhennessey-net'));
 
-// routes ==================================================
-
-// configure our routes
-var api = require('./app/routes/api');
-app.use('/api', api);
-
-// frontend routes =========================================================
-// route to handle all angular requests
-app.get('*', function(req, res) {
-    res.sendfile('./public/dist/index.html');
+// serve index for everything
+app.get('/*', function (req, res) {
+  res.sendFile('./dist/bobhennessey-net/index.html', { root: __dirname });
 });
 
-
 // start app ===============================================
-// startup our app at http://localhost:8282
-app.listen(port);
-
-// shoutout to the user
-console.log('Magic happens on port ' + port);
+// startup our app at http://localhost:8080
+app.listen(process.env.PORT || 8080);
 
 // expose app
 exports = module.exports = app;
