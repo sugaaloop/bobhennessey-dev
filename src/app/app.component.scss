@@ -1,0 +1,37 @@
+@import '../styles/styles.scss';
+
+.header {
+  .logo {
+    margin: 50px auto;
+    img {
+      display: block;
+      margin: auto;
+    }
+  }
+}
+
+.container {
+  padding-top: 10px;
+  text-align: center;
+  width: 60%;
+  margin: auto;
+  max-width: 1000px;
+}
+
+.footer {
+  .social {
+    width: 20%;
+    margin: auto;
+    padding-top: 20px;
+    ul {
+      margin: auto;
+      padding: 0 10px;
+      li {
+        list-style: none;
+        margin: auto;
+        width: 20%;
+      }
+    }
+
+  }
+}
