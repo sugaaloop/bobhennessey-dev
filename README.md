@@ -1,13 +1,8 @@
 # bobhennessey . net
 
 ## source
-### primary repo
+
 https://github.com/sugaaloop/bobhennessey-net
-
-### issues repo
-https://gitlab.com/sugaaloop/bobhennessey-net
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
 ## Development server
 
@@ -20,6 +15,14 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Deploy
+
+deploys to gcp app engine using cloud build
+builds are triggered by tags pushed to github, where the first character of the tag is a digit
+
+    git push origin x.y.z
+
 
 ## Running unit tests
 
