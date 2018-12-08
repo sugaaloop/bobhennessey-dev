@@ -1,7 +1,9 @@
 // app.js
 
 // google cloud app engine debugging
-require('@google-cloud/debug-agent').start();
+if (process.env.NODE_ENV === 'production') {
+  require('@google-cloud/debug-agent').start();
+}
 
 // modules =================================================
 var express        = require('express');
@@ -25,17 +27,27 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT
 app.use(methodOverride('X-HTTP-Method-Override'));
 
+// force https
+app.use(function (req, res, next) {
+  if (!req.secure && process.env.NODE_ENV === 'production') {
+    return res.redirect(301, 'https://' + req.get('host') + req.url);
+  }
+  next();
+});
+
+
 // set the static files location /public/img will be /img for users
+// do after other middleware
 app.use(compression());
 app.use(express.static(__dirname + '/dist/bobhennessey-net'));
 
 // serve index for everything
 app.get('/*', function (req, res) {
+  console.log('hai-ng');
   res.sendFile('./dist/bobhennessey-net/index.html', { root: __dirname });
 });
 
 // start app ===============================================
-// startup our app at http://localhost:8080
 app.listen(process.env.PORT || 8080);
 
 // expose app
