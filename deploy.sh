@@ -6,7 +6,7 @@
 # $tag_name : optional - app engine version name
 
 # environment
-promote=" --no-promote"
+promote=" --promote"
 if [ $1 == "dev" ]; then
     promote=" --promote"
 fi
