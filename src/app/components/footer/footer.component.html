@@ -3,12 +3,12 @@
       <ul>
         <li>
           <div class="social-link">
-            <a href="https://github.com/sugaaloop/bobhennessey-net" target="_blank"><img src="assets/github.png" /></a>
+            <a [href]="socialLinks.github" target="_blank" (click)="trackOutboundClick(socialLinks.github)"><img src="assets/github.png" /></a>
           </div>
         </li>
         <li>
           <div class="social-link">
-            <a href="https://www.linkedin.com/in/bob-hennessey-1034467/" target="_blank"><img src="assets/linkedin.png" /></a>
+            <a [href]="socialLinks.linkedin" target="_blank" (click)="trackOutboundClick(socialLinks.linkedin)"><img src="assets/linkedin.png" /></a>
           </div>
         </li>
       </ul>
