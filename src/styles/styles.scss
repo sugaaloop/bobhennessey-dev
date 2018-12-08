@@ -5,9 +5,13 @@
 body {
   background-color: $mint;
   color: $almost-black;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Exo', Arial, sans-serif;
   font-size: 1.3em;
   @include mq(mobile) {
     font-size: 1em;
   }
+}
+
+h1 {
+  font-family: 'Electrolize', Arial, sans-serif;
 }

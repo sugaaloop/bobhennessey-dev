@@ -1,8 +1,9 @@
 
 $mint: #57E399;
 $almost-black: #0B1C13;
-$evening-purp: #9957E3;
+$candyland-purple: #9957E3;
 $dark-sky-blue: #57A1E3;
+$evening-purple-blue: #575BE3;
 
 @mixin mq($break) {
   @if $break == 'mobile' {
