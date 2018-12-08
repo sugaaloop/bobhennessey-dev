@@ -11,21 +11,24 @@ module.exports.subscribe = (data, context, callback) => {
   const build = eventToBuild(data.data);
   
 
-// Skip if the current status is not in the status list.
-// Add additional statues to list if you'd like:
-// QUEUED, WORKING, SUCCESS, FAILURE,
-// INTERNAL_ERROR, TIMEOUT, CANCELLED
+  // Skip if the current status is not in the status list.
+  // Add additional statues to list if you'd like:
+  // QUEUED, WORKING, SUCCESS, FAILURE,
+  // INTERNAL_ERROR, TIMEOUT, CANCELLED
   const status = ['SUCCESS', 'FAILURE', 'INTERNAL_ERROR', 'TIMEOUT'];
   if (status.indexOf(build.status) === -1) {
     return callback();
   }
 
+  // Skip if this is an internal gcp build event
+  // Testing for build.source is not great, but there are not really any better identifiers
+  if (!build.source) {
+      return callback();
+  }
+
   // Send message to Slack.
   const message = createSlackMessage(build);
   webhook.send(message, callback);
-  console.log('data: ', data);
-  console.log('build: ', build);
-  console.log('message: ', message);
 };
 
 // eventToBuild transforms pubsub event message to a build object.
