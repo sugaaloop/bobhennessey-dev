@@ -1,0 +1,11 @@
+@import '../../styles/styles.scss';
+
+.header {
+  .logo {
+    margin: 50px auto;
+    width: 300px;
+    svg {
+      fill: $evening-purple-blue;
+    }
+  }
+}
