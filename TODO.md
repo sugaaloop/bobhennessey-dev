@@ -5,7 +5,11 @@
 * Resume
 * Bio
 * bobhennessey-net technical breakdown
-* 
+    * frontend
+    * backend
+    * build
+    * testing
+    * CI/CD
 
 ## Features
 
