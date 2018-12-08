@@ -9,6 +9,7 @@ const webhook = new IncomingWebhook(SLACK_WEBHOOK_URL);
 // subscribe is the main function called by Cloud Functions.
 module.exports.subscribe = (data, context, callback) => {
   const build = eventToBuild(data.data);
+  
 
 // Skip if the current status is not in the status list.
 // Add additional statues to list if you'd like:
@@ -22,6 +23,9 @@ module.exports.subscribe = (data, context, callback) => {
   // Send message to Slack.
   const message = createSlackMessage(build);
   webhook.send(message, callback);
+  console.log('data: ', data);
+  console.log('build: ', build);
+  console.log('message: ', message);
 };
 
 // eventToBuild transforms pubsub event message to a build object.
