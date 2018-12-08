@@ -2,23 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component';
-import { AppRouterModule } from './/app-router.module';
-import { OtherComponent } from './other/other.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent,
-    OtherComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRouterModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

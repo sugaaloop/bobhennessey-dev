@@ -1,0 +1,22 @@
+@import '../../../styles/styles.scss';
+
+.container {
+  width: 80%;
+  margin: auto;
+  max-width: 800px;
+  h1 {
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    span {
+      display: block;
+    }
+    .main-heading {
+      font-family: 'Electrolize', Arial, sans-serif;
+    }
+    .sub-heading {
+      font-size: .75em;
+    }
+  }
+}
