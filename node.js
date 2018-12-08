@@ -34,6 +34,7 @@ app.use(function (req, res, next) {
       'x-req-secure': req.secure,
       'x-node-env': process.env.NODE_ENV,
       'x-protocol': req.protocol,
+      'my-forwarded-proto': req.get('x-forwarded-proto'),
     });
     return res.redirect(301, 'https://' + req.get('host') + req.url);
   }
