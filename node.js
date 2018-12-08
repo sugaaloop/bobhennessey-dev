@@ -29,13 +29,7 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 
 // force https
 app.use(function (req, res, next) {
-  if (!req.secure && process.env.NODE_ENV === 'production') {
-    res.set({
-      'x-req-secure': req.secure,
-      'x-node-env': process.env.NODE_ENV,
-      'x-protocol': req.protocol,
-      'my-forwarded-proto': req.get('x-forwarded-proto'),
-    });
+  if (req.get('x-forwarded-proto') !== 'https' && process.env.NODE_ENV === 'production') {
     return res.redirect(301, 'https://' + req.get('host') + req.url);
   }
   next();
