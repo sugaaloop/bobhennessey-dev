@@ -8,6 +8,7 @@ body {
   background-color: $mint;
   color: $almost-black;
   font-family: 'Exo', Arial, sans-serif;
+  font-display: swap;
   line-height: 1.4;
   @include mq(mobile) {
     font-size: .75em;
