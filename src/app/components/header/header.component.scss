@@ -7,5 +7,11 @@
     svg {
       fill: $evening-purple-blue;
     }
+    &.small {
+      margin: 30px auto;
+      svg {
+        height: 50px;
+      }
+    }
   }
 }

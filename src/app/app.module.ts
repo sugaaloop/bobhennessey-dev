@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FactorioComponent } from './components/factorio/factorio.component';
 import { HttpClientModule } from '@angular/common/http';
+import { KittensComponent } from './components/kittens/kittens.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    FactorioComponent
+    FactorioComponent,
+    KittensComponent
   ],
   imports: [
     BrowserModule,

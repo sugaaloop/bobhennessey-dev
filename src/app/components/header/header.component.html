@@ -1,5 +1,5 @@
 <div class="header">
-    <div class="logo">
+    <div class="logo" [ngClass]="{ 'small': state.smallHeader }">
       <a href="/">
         <!-- TODO: move this into its own component? or solve the color through css issue -->
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
