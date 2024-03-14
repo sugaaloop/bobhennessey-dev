@@ -1,0 +1,11 @@
+# anything you add here you probably want to add in .eslintignore
+
+dist/
+.yarn/
+.husky/
+*.lock
+*ignore
+*Dockerfile
+*.md
+src/database/schema
+.vscode/

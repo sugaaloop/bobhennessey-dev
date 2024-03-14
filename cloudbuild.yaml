@@ -1,10 +1,11 @@
 # gcp cloud build config
 
 steps:
-- name: 'gcr.io/cloud-builders/npm'
-  args: ['install']
-- name: 'gcr.io/cloud-builders/npm'
-  args: ['run', 'build']
+- name: 'node'
+  entrypoint: 'yarn'
+- name: 'node'
+  entrypoint: 'yarn'
+  args: ['build']
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: '/bin/bash'
   args: ['./deploy.sh', '$_ENV', '$TAG_NAME']

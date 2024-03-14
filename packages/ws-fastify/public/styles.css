@@ -1,0 +1,99 @@
+
+/* @mixin mq($break) {
+  @if $break == 'mobile' {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  }
+} */
+
+:root {
+  --mint: #57E399;
+  --almost-black: #0B1C13;
+  --candyland-purple: #9957E3;
+  --dark-sky-blue: #57A1E3;
+  --evening-purple-blue: #575BE3;
+}
+body {
+  background-color: var(--mint);
+  color: var(--almost-black);
+  font-family: 'Exo', Arial, sans-serif;
+  font-display: swap;
+  line-height: 1.4;
+  /* @include mq(mobile) {
+    font-size: .75em;
+  } */
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+p {
+  font-size: 1.3em;
+  margin: 15px 0;
+}
+
+/*  header  */
+.header .logo {
+    margin: 50px auto;
+    width: 150px;
+}
+.header .logo svg {
+  height: 100px;
+  fill: var(--evening-purple-blue);
+}
+.header .logo.small {
+  margin: 30px auto;
+}
+.header .logo.small svg {
+  height: 50px;
+}
+
+/*  main container  */
+.container {
+  width: 80%;
+  margin: auto;
+  max-width: 800px;
+}
+.container h1 {
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.container span {
+  display: block;
+}
+.container .main-heading {
+  font-family: 'Electrolize', Arial, sans-serif;
+}
+.container .sub-heading {
+  font-size: .5em;
+}
+
+/*  footer  */
+.footer .social {
+  width: 15%;
+  min-width: 100px;
+  margin: auto;
+  padding-top: 20px;
+}
+.footer .social ul {
+  margin: auto;
+  padding-left: 0;
+}
+.footer .social ul li {
+  list-style: none;
+  display: inline-block;
+  margin: auto;
+  width: 50%;
+}
+.footer .social ul li .social-link {
+  width: 30px;
+  margin: auto;
+}
+.footer .social ul li .social-link img {
+  width: 100%;
+  height: auto;
+}

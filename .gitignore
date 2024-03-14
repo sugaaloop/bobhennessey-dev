@@ -1,39 +1,57 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# compiled output
-/dist
-/tmp
-/out-tsc
+# Code coverage
+coverage
+/cypress/videos/
+/cypress/screenshots/
 
-# dependencies
-/node_modules
+# Dependency directories
+node_modules
 
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+# Optional npm cache directory
+.npm
 
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+# yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/typings
+# Optional REPL history
+.node_repl_history
 
-# System Files
+# 0x
+profile-*
+
+# mac files
 .DS_Store
-Thumbs.db
+
+# vim swap files
+*.swp
+
+# clinic
+profile*
+*clinic*
+*flamegraph*
+
+# compiled app
+dist
+dist-ssr
+
+# local files
+config/*
+!config/default.yaml
+!config/test.yaml
+!config/custom-environment-variables.yaml
+_private
+*.local

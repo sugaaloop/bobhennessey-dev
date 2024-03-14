@@ -1,0 +1,32 @@
+{
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "eslint-plugin-ignore-generated"],
+  "env": {
+    "node": true
+  },
+  "root": true,
+  "overrides": [
+    {
+      "files": ["test/**/*.ts"],
+      "rules": {
+        "@typescript-eslint/ban-ts-comment": "off"
+      }
+    }
+  ],
+  "rules": {
+    "no-return-assign": ["error", "always"],
+    "no-var": "error",
+    "no-constant-binary-expression": "error",
+    "prefer-const": "error",
+    "eqeqeq": "error",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ]
+  }
+}

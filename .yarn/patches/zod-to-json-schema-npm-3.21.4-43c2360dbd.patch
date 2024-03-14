@@ -1,0 +1,54 @@
+diff --git a/src/Options.d.ts b/src/Options.d.ts
+index abfb7a23b94e2244d3529eb92ce540b7778f27c2..fbf47c67fe7ce48a94ce7d6c54113b8892a8c89e 100644
+--- a/src/Options.d.ts
++++ b/src/Options.d.ts
+@@ -2,7 +2,7 @@ import { ZodSchema } from "zod";
+ export type Targets = "jsonSchema7" | "jsonSchema2019-09" | "openApi3";
+ export type Options<Target extends Targets = "jsonSchema7"> = {
+     name: string | undefined;
+-    $refStrategy: "root" | "relative" | "none" | "seen";
++    $refStrategy: "root" | "relative" | "none" | "seen" | "topLevelOnly";
+     basePath: string[];
+     effectStrategy: "input" | "any";
+     pipeStrategy: "input" | "all";
+diff --git a/src/parseDef.js b/src/parseDef.js
+index 4f33785322590999d31593cdcbdb174175930799..40f5f28fe961649141507204cda6f1ee005e3459 100644
+--- a/src/parseDef.js
++++ b/src/parseDef.js
+@@ -54,11 +54,7 @@ const get$ref = (item, refs) => {
+     switch (refs.$refStrategy) {
+         case "root":
+             return {
+-                $ref: item.path.length === 0
+-                    ? ""
+-                    : item.path.length === 1
+-                        ? `${item.path[0]}/`
+-                        : item.path.join("/"),
++                $ref: getRootPath(item.path),
+             };
+         case "relative":
+             return { $ref: getRelativePath(refs.currentPath, item.path) };
+@@ -80,8 +76,23 @@ const get$ref = (item, refs) => {
+                 return item.jsonSchema;
+             }
+         }
++        case "topLevelOnly": {
++            if (item.path.includes('properties')) {
++                return undefined;
++            }
++            return {
++                $ref: getRootPath(item.path),
++            };
++        }
+     }
+ };
++const getRootPath = (parts) => {
++    return parts.length === 0
++        ? ""
++        : parts.length === 1
++            ? `${parts[0]}/`
++            : parts.join("/");
++};
+ const getRelativePath = (pathA, pathB) => {
+     let i = 0;
+     for (; i < pathA.length && i < pathB.length; i++) {

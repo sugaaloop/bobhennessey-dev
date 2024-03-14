@@ -1,0 +1,12 @@
+{
+  "extends": ["../../tsconfig.json"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "noErrorTruncation": true,
+    "sourceMap": true,
+    "paths": {
+      "#~/*.js": ["./src/*.js"]
+    }
+  },
+  "include": ["src"]
+}
