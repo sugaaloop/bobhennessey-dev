@@ -15,8 +15,8 @@
   ],
   "scripts": {
     "build": "yarn clean && yarn build_deps",
-    "clean": "yarn fastify:clean && yarn vue:clean",
-    "build_deps": "yarn fastify:build && yarn vue:build",
+    "clean": "yarn fastify:clean",
+    "build_deps": "yarn fastify:build",
     "start": "node ./packages/ws-fastify/dist/main.js"
   },
   "prettier": {
@@ -26,15 +26,16 @@
   "dependencies": {
     "@fastify/static": "^7.0.1",
     "config": "^3.3.9",
+    "js-yaml": "^4.1.0",
     "node-cache": "^5.1.2",
-    "ws-fastify": "^0.0.1",
-    "ws-vue": "^0.0.1"
+    "ws-fastify": "^0.0.1"
   },
   "devDependencies": {
     "@tsconfig/esm": "^1.0.5",
     "@tsconfig/node20": "^20.1.2",
     "@tsconfig/strictest": "^2.0.2",
     "@types/config": "^3.3.3",
+    "@types/js-yaml": "^4",
     "@types/node": "^20.11.25",
     "@typescript-eslint/eslint-plugin": "^6.6.0",
     "@typescript-eslint/parser": "^6.6.0",
