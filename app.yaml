@@ -1,1 +1,3 @@
 runtime: nodejs18
+env_variables:
+  PORT: 3100

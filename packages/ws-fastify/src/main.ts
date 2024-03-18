@@ -49,7 +49,7 @@ const start = async () => {
         fastify.log.info('Preparing to shut down app...');
         fastify.log.info('Closing server...');
         await fastify.close();
-      } as CloseWithGraceAsyncCallback
+      } as CloseWithGraceAsyncCallback,
     );
 
     fastify.addHook('onClose', (_instance, done) => {
