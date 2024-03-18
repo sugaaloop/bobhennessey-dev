@@ -1,2 +1,9 @@
 listen:
-  port: PORT
+  port:
+    __name: PORT
+    __format: number
+
+
+ "__name": "ADMIN_ACCS",
+        "__format": "json"
+      }
