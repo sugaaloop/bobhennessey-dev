@@ -1495,6 +1495,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/js-yaml@npm:^4":
+  version: 4.0.9
+  resolution: "@types/js-yaml@npm:4.0.9"
+  checksum: 10c0/24de857aa8d61526bbfbbaa383aa538283ad17363fcd5bb5148e2c7f604547db36646440e739d78241ed008702a8920665d1add5618687b6743858fae00da211
+  languageName: node
+  linkType: hard
+
 "@types/jsdom@npm:^21.1.6":
   version: 21.1.6
   resolution: "@types/jsdom@npm:21.1.6"
@@ -2516,6 +2523,7 @@ __metadata:
     "@tsconfig/node20": "npm:^20.1.2"
     "@tsconfig/strictest": "npm:^2.0.2"
     "@types/config": "npm:^3.3.3"
+    "@types/js-yaml": "npm:^4"
     "@types/node": "npm:^20.11.25"
     "@typescript-eslint/eslint-plugin": "npm:^6.6.0"
     "@typescript-eslint/parser": "npm:^6.6.0"
@@ -2525,6 +2533,7 @@ __metadata:
     eslint: "npm:^8.49.0"
     eslint-config-prettier: "npm:^8.8.0"
     eslint-plugin-ignore-generated: "npm:^3.1.0"
+    js-yaml: "npm:^4.1.0"
     leasot: "npm:^13.3.0"
     node-cache: "npm:^5.1.2"
     nodemon: "npm:^2.0.22"
@@ -2536,7 +2545,6 @@ __metadata:
     vite: "npm:^5.1.5"
     vitest: "npm:^1.3.1"
     ws-fastify: "npm:^0.0.1"
-    ws-vue: "npm:^0.0.1"
   languageName: unknown
   linkType: soft
 
@@ -9083,6 +9091,7 @@ __metadata:
     "@fastify/jwt": "npm:^7.2.2"
     "@fastify/rate-limit": "npm:^9.0.1"
     "@fastify/sensible": "npm:^5.5.0"
+    "@fastify/static": "npm:^7.0.1"
     "@fastify/swagger": "npm:^8.12.0"
     "@fastify/swagger-ui": "npm:^1.10.1"
     "@fastify/under-pressure": "npm:^8.3.0"
@@ -9142,7 +9151,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"ws-vue@npm:^0.0.1, ws-vue@workspace:packages/ws-vue":
+"ws-vue@workspace:packages/ws-vue":
   version: 0.0.0-use.local
   resolution: "ws-vue@workspace:packages/ws-vue"
   dependencies:
